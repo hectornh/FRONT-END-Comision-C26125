@@ -1,0 +1,661 @@
+/* ============================================================
+   ESTILOS GENERALES
+   Google Fonts, reset, variables de color y tipografía base
+   ============================================================ */
+
+/* Fuentes importadas desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap");
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Selector de etiqueta: se aplica a todo el body */
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    color: #3a3a3a;
+    background-color: #faf9f6;
+    width: 100%;
+}
+
+/* Tipografía base */
+h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: #3a3a3a;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+    color: #3a3a3a;
+}
+
+h5 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #3a3a3a;
+}
+
+p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #5a5a5a;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Clase utilitaria de padding para secciones */
+.section-p1 {
+    padding: 60px 80px;
+}
+
+/* Clase de selector: subtítulo reutilizable en varias secciones */
+.subtitulo-seccion {
+    color: #7a7a7a;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+
+/* ============================================================
+   HEADER Y NAVEGACIÓN
+   ============================================================ */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 80px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Selector de etiqueta: lista de navegación */
+ul {
+    list-style: none;
+}
+
+.navbar {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar a {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #3a3a3a;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #7a5c3a;
+}
+
+
+/* ============================================================
+   HERO
+   Sección principal con imagen de fondo
+   ============================================================ */
+
+.hero {
+    background-image: url("img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 80px;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 40px 50px;
+    border-radius: 8px;
+    max-width: 550px;
+}
+
+.hero-subtitulo {
+    color: #d4b896;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    color: #e0e0e0;
+    margin-bottom: 25px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: #7a5c3a;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #5e4429;
+}
+
+
+/* ============================================================
+   SECCIÓN PRODUCTOS
+   Cards en Flexbox - requisito del curso
+   ============================================================ */
+
+.section-productos {
+    text-align: center;
+}
+
+/* Flexbox: distribuye las cards de forma responsiva */
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 10px;
+}
+
+/* Card individual de producto */
+.producto {
+    width: 28%;
+    min-width: 240px;
+    background-color: #fff;
+    border: 1px solid #e8e0d5;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.producto-descripcion {
+    text-align: left;
+    padding: 12px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.producto-descripcion span {
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Selector de clase: precio del producto */
+.producto-descripcion h4 {
+    color: #7a5c3a;
+    font-size: 1.1rem;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.btn-consultar {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding: 9px 0;
+    border-radius: 5px;
+    background-color: #7a5c3a;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-consultar:hover {
+    background-color: #5e4429;
+}
+
+
+/* ============================================================
+   BANNER NOSOTROS
+   Sección informativa con video
+   ============================================================ */
+
+.banner {
+    background-color: #f0ece4;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.banner-texto {
+    flex: 1;
+    min-width: 260px;
+}
+
+.banner-texto h2 {
+    margin-bottom: 20px;
+}
+
+.banner-video {
+    flex: 1;
+    min-width: 260px;
+}
+
+.banner-video iframe {
+    width: 100%;
+    height: 280px;
+    border: none;
+    border-radius: 8px;
+}
+
+
+/* ============================================================
+   SECCIÓN RESEÑAS
+   Grid de 3 columnas
+   ============================================================ */
+
+.section-resenias {
+    text-align: center;
+    background-color: #faf9f6;
+}
+
+.resenias-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding-top: 10px;
+}
+
+.resenia-card {
+    background-color: #fff;
+    border: 1px solid #e8e0d5;
+    border-radius: 10px;
+    padding: 30px 25px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resenia-autor {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid #e8e0d5;
+    padding-top: 15px;
+}
+
+.resenia-autor strong {
+    font-size: 0.9rem;
+    color: #3a3a3a;
+}
+
+.resenia-autor span {
+    font-size: 0.8rem;
+    color: #7a5c3a;
+}
+
+
+/* ============================================================
+   SECCIÓN CONTACTO
+   Formulario responsivo con Formspree
+   ============================================================ */
+
+.section-contacto {
+    text-align: center;
+    background-color: #f0ece4;
+}
+
+/* Selector de clase: formulario */
+.formulario {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.campo input,
+.campo textarea {
+    padding: 12px 15px;
+    border: 1px solid #d5cdc2;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+    font-size: 0.95rem;
+    background-color: #fff;
+    color: #3a3a3a;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #7a5c3a;
+}
+
+.btn-enviar {
+    padding: 14px;
+    background-color: #7a5c3a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: "Lato", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #5e4429;
+}
+
+.contacto-info {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+
+/* ============================================================
+   FOOTER
+   Pie de página con columnas
+   ============================================================ */
+
+/* Selector de etiqueta: footer */
+footer {
+    background-color: #3a3a3a;
+    color: #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-col {
+    min-width: 180px;
+    flex: 1;
+}
+
+footer h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+/* Selector de clase: lista de navegación del footer */
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav a {
+    color: #aaa;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #d4b896;
+}
+
+.footer-copyright {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.footer-copyright p {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+
+/* ============================================================
+   MEDIA QUERIES - DISEÑO RESPONSIVO
+   Breakpoint 1: Notebook (max-width: 1024px)
+   Breakpoint 2: Móvil (max-width: 600px)
+   ============================================================ */
+
+/* --- Notebook --- */
+@media (max-width: 1024px) {
+
+    .section-p1 {
+        padding: 50px 40px;
+    }
+
+    .header {
+        padding: 15px 40px;
+    }
+
+    .hero {
+        padding: 0 40px;
+    }
+
+    .hero-content {
+        max-width: 480px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .producto {
+        width: 44%;
+    }
+
+    .resenias-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner {
+        flex-direction: column;
+    }
+}
+
+/* --- Móvil --- */
+@media (max-width: 600px) {
+
+    .section-p1 {
+        padding: 40px 20px;
+    }
+
+    .header {
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    /* Mostrar el botón hamburguesa en móvil */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Ocultar el nav por defecto en móvil */
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        z-index: 998;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .navbar li a {
+        display: block;
+        padding: 14px 25px;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0ece4;
+    }
+
+    .navbar li:last-child a {
+        border-bottom: none;
+    }
+
+    .hero {
+        padding: 0 20px;
+        height: 80vh;
+        justify-content: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .producto {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .resenias-container {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario {
+        max-width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .banner-video iframe {
+        height: 200px;
+    }
+}
+
+/* ============================================================
+   BOTÓN HAMBURGUESA - Solo CSS (sin JavaScript)
+   Truco: checkbox oculto + label como botón
+   ============================================================ */
+
+/* Oculta el checkbox real, pero sigue siendo funcional */
+.menu-toggle {
+    display: none;
+}
+
+/* El label es el botón visual: tres rayitas */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #3a3a3a;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Cuando el checkbox está tildado, las rayitas se convierten en X */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Cuando el checkbox está tildado, muestra el nav */
+.menu-toggle:checked ~ nav {
+    display: block;
+}
