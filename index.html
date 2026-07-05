@@ -4,9 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: metaetiquetas para optimizar la página en buscadores -->
+    <meta name="description" content="La Pequelette - Chacra agroecológica en Calamuchita, Córdoba. Quesos artesanales y untables elaborados con leche de cabras felices.">
+    <meta name="keywords" content="queso artesanal, queso de cabra, agroecológico, Calamuchita, Córdoba, untable, brousse">
+    <meta name="author" content="La Pequelette">
+
     <title>La Pequelette - Chacra Agroecológica</title>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
     <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,12 +22,12 @@
 <body>
 
     <!-- ==================== HEADER ==================== -->
-    <header class="header">
+    <header id="encabezado" class="header">
         <a href="#">
-            <img src="img/logo.png" class="logo" alt="Logo La Pequelette" width="60" height="60">
+            <img src="img/logo.png" class="logo" alt="Logo La Pequelette - Chacra Agroecológica" width="60" height="60">
         </a>
 
-        <!-- Truco CSS puro: el checkbox oculto controla el menú -->
+        <!-- Truco CSS puro: el checkbox oculto controla el menú hamburguesa -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">
             <span></span>
@@ -36,13 +44,18 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
+
+        <!-- Ícono del carrito de compras -->
+        <button id="btn-carrito" class="btn-carrito" aria-label="Ver carrito">
+            🛒 <span id="contador-carrito">0</span>
+        </button>
     </header>
 
     <main>
 
         <!-- ==================== HERO ==================== -->
-        <section class="hero">
-            <div class="hero-content">
+        <section id="hero" class="hero">
+            <div id="hero-content" class="hero-content">
                 <p class="hero-subtitulo">Chacra Agroecológica · Calamuchita</p>
                 <h1>Quesos artesanales de cabras felices</h1>
                 <p>Elaborados con amor en Cañada de Alvarez, Córdoba.</p>
@@ -55,84 +68,17 @@
             <h2>Nuestros Productos</h2>
             <p class="subtitulo-seccion">Quesos frescos y untables elaborados con leche de nuestras propias cabras</p>
 
-            <div class="productos-container">
-
-                <!-- Card 1 -->
-                <div class="producto">
-                    <img src="img/productos/prod1.jpg" alt="Brousse 75g">
-                    <div class="producto-descripcion">
-                        <span>Queso Fresco</span>
-                        <h5>Brousse (75g)</h5>
-                        <h4>$4.000</h4>
-                    </div>
-                    <a href="#contacto" class="btn-consultar">Consultar</a>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="producto">
-                    <img src="img/productos/prod2.jpg" alt="Brousse 150g">
-                    <div class="producto-descripcion">
-                        <span>Queso Fresco</span>
-                        <h5>Brousse (150g)</h5>
-                        <h4>$8.000</h4>
-                    </div>
-                    <a href="#contacto" class="btn-consultar">Consultar</a>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="producto">
-                    <img src="img/productos/prod5.jpg" alt="Untable con Albahaca">
-                    <div class="producto-descripcion">
-                        <span>Untable</span>
-                        <h5>Untable con Albahaca (150g)</h5>
-                        <h4>$9.000</h4>
-                    </div>
-                    <a href="#contacto" class="btn-consultar">Consultar</a>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="producto">
-                    <img src="img/productos/prod4.jpg" alt="Untable con Cebolla de verdeo">
-                    <div class="producto-descripcion">
-                        <span>Untable</span>
-                        <h5>Untable con Cebolla de verdeo (150g)</h5>
-                        <h4>$9.000</h4>
-                    </div>
-                    <a href="#contacto" class="btn-consultar">Consultar</a>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="producto">
-                    <img src="img/productos/prod6.jpg" alt="Untable con Menta">
-                    <div class="producto-descripcion">
-                        <span>Untable</span>
-                        <h5>Untable con Menta (150g)</h5>
-                        <h4>$9.000</h4>
-                    </div>
-                    <a href="#contacto" class="btn-consultar">Consultar</a>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="producto">
-                    <img src="img/productos/prod3.jpg" alt="Untable con Ají picante">
-                    <div class="producto-descripcion">
-                        <span>Untable</span>
-                        <h5>Untable con Ají picante (150g)</h5>
-                        <h4>$9.000</h4>
-                    </div>
-                    <a href="#contacto" class="btn-consultar">Consultar</a>
-                </div>
-
-            </div>
+            <!-- Las cards se generan dinámicamente con JavaScript -->
+            <div id="contenedor-productos" class="productos-container"></div>
         </section>
 
         <!-- ==================== NOSOTROS ==================== -->
         <section class="banner section-p1" id="nosotros">
-            <div class="banner-texto">
+            <div id="banner-texto" class="banner-texto">
                 <h2>Producción agroecológica</h2>
                 <p>Nuestras cabras pastan libremente en la sierra de Calamuchita. Cada queso es elaborado a mano, sin conservantes ni agregados artificiales. Delivery disponible en Berrotarán, Embalse y La Cruz.</p>
             </div>
-            <div class="banner-video">
+            <div id="banner-video" class="banner-video">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3369.4166019079685!2d-64.55629522440017!3d-32.38119244355374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d28f2e902fd2d9%3A0x5ba2e8a61ed206b3!2sLa%20Pequelette!5e0!3m2!1ses!2sar!4v1778455725670!5m2!1ses!2sar"
                     title="Ubicación de La Pequelette en Google Maps"
@@ -149,7 +95,6 @@
             <p class="subtitulo-seccion">Opiniones de compradores de la zona</p>
 
             <div class="resenias-container">
-
                 <div class="resenia-card">
                     <p>"El untable con albahaca es increíble. Se nota que está hecho con productos naturales y mucho cuidado. ¡No puedo dejar de comprarlo!"</p>
                     <div class="resenia-autor">
@@ -157,7 +102,6 @@
                         <span>Embalse, Córdoba</span>
                     </div>
                 </div>
-
                 <div class="resenia-card">
                     <p>"El Brousse es suave, cremoso y delicioso. Llegó perfecto en el delivery. Es el mejor queso de cabra que probé en la región."</p>
                     <div class="resenia-autor">
@@ -165,7 +109,6 @@
                         <span>Berrotarán, Córdoba</span>
                     </div>
                 </div>
-
                 <div class="resenia-card">
                     <p>"Lo pedí para una picada y fue el hit de la noche. El de ají picante tiene el punto justo. Ya somos clientes fijos de La Pequelette."</p>
                     <div class="resenia-autor">
@@ -173,7 +116,6 @@
                         <span>La Cruz, Córdoba</span>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -182,38 +124,51 @@
             <h2>Contacto</h2>
             <p class="subtitulo-seccion">Hacé tu pedido o consultá disponibilidad</p>
 
-            <form action="https://formspree.io/f/lapequelette" method="POST" class="formulario">
+            <form id="formulario-contacto" action="https://formspree.io/f/lapequelette" method="POST" class="formulario">
+
+                <!-- Campo nombre -->
                 <div class="campo">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                    <label for="tu-nombre">Nombre</label>
+                    <input type="text" id="tu-nombre" name="nombre" placeholder="Tu nombre completo">
+                    <span class="texto-error"></span>
                 </div>
+
+                <!-- Campo email -->
                 <div class="campo">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                    <label for="tu-correo">Correo electrónico</label>
+                    <input type="email" id="tu-correo" name="email" placeholder="tu@correo.com">
+                    <span class="texto-error"></span>
                 </div>
+
+                <!-- Campo mensaje -->
                 <div class="campo">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Qué te gustaría pedir o consultar?" required></textarea>
+                    <label for="tu-mensaje">Mensaje</label>
+                    <textarea id="tu-mensaje" name="mensaje" rows="5" placeholder="¿Qué te gustaría pedir o consultar?"></textarea>
+                    <span class="texto-error"></span>
                 </div>
+
                 <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                <p id="mensaje-exito" class="mensaje-exito"></p>
             </form>
 
-            <div class="contacto-info">
+            <div id="contacto-info" class="contacto-info">
                 <p>📍 Cañada de Alvarez, Calamuchita, Córdoba</p>
                 <p>📧 lapequelette@proton.me</p>
-                <p>📸 @la_pequelette_arg</p>
+                <a href="https://instagram.com/la_pequelette_arg" target="_blank" class="link-instagram">
+                    <img src="img/instagram.png" alt="Instagram" class="icono-instagram">
+                    @la_pequelette_arg
+                </a>
             </div>
         </section>
 
     </main>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer class="footer section-p1">
+    <footer id="pie-pagina" class="footer section-p1">
         <div class="footer-col">
             <h4>La Pequelette</h4>
             <p>Chacra agroecológica en Calamuchita. Quesos artesanales de cabras felices.</p>
         </div>
-
         <div class="footer-col">
             <h4>Navegación</h4>
             <ul class="footer-nav">
@@ -223,18 +178,50 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
-
         <div class="footer-col">
             <h4>Zona de entrega</h4>
             <p>Berrotarán · Embalse · La Cruz</p>
             <p>Pedidos con anticipación</p>
+            <a href="https://instagram.com/la_pequelette_arg" target="_blank" class="link-instagram">
+                <img src="img/instagram.png" alt="Instagram" class="icono-instagram">
+                @la_pequelette_arg
+            </a>
         </div>
-
         <div class="footer-copyright">
             <p>© 2026 La Pequelette · Todos los derechos reservados</p>
         </div>
     </footer>
 
-</body>
+    <!-- ==================== MODAL DETALLE PRODUCTO ==================== -->
+    <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-caja">
+            <button id="btn-cerrar-modal" class="btn-cerrar-modal" aria-label="Cerrar">✕</button>
+            <img id="modal-imagen" src="" alt="Imagen del producto">
+            <div class="modal-info">
+                <span id="modal-categoria" class="modal-categoria"></span>
+                <h3 id="modal-titulo"></h3>
+                <p id="modal-descripcion"></p>
+                <p id="modal-precio" class="modal-precio"></p>
+                <button id="modal-btn-agregar" class="btn-agregar-modal">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
 
+    <!-- ==================== PANEL CARRITO ==================== -->
+    <div id="panel-carrito" class="panel-carrito">
+        <div class="carrito-encabezado">
+            <h3>🛒 Tu carrito</h3>
+            <button id="btn-cerrar-carrito" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div id="lista-carrito" class="lista-carrito"></div>
+        <div class="carrito-total">
+            <strong>Total: <span id="total-carrito">$0</span></strong>
+        </div>
+        <button id="btn-vaciar" class="btn-vaciar">Vaciar carrito</button>
+    </div>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+
+</body>
 </html>
